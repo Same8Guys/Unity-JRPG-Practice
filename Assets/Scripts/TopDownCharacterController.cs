@@ -1,10 +1,8 @@
-﻿using System.Diagnostics;
-using System.Numerics;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Vector2;
+
+namespace Player
+{
     public class CharacterController : MonoBehaviour
     {
         public float speed;
@@ -38,11 +36,15 @@ using UnityEngine.Vector2;
             animator = GetComponent<Animator>();
         }
 
-        private void FixedUpdate() {
+        private void FixedUpdate()
+        {
             Vector2 moveDir = _moveAction.ReadValue<Vector2>();
             
+            _rigidbody.MovePosition(moveDir * speed + _rigidbody.position );
         }
 
-        private void OnMenu(InputAction.CallbackContext context) {
+        private void OnMenu(InputAction.CallbackContext context)
+        {
         }
     }
+}
