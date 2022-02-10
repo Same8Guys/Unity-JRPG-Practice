@@ -3,7 +3,9 @@ using UnityEngine.InputSystem;
 
 namespace Player
 {
-    public class CharacterController : MonoBehaviour
+    [RequireComponent(typeof(Rigidbody2D))]
+    [RequireComponent(typeof(Animator))]
+    public class PlayerMovement : MonoBehaviour
     {
         public float speed;
         private DefaultPlayerActions _defaultPlayerActions;
