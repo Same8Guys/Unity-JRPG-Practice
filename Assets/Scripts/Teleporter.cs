@@ -16,6 +16,6 @@ public class Teleporter : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        
+        GameManager gameManager = GameManager.Instance;
     }
 }
